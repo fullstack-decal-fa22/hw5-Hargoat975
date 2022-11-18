@@ -8,8 +8,8 @@ const Comments = ({ postId, comments: initialComments }) => {
   const handleSubmitComment = () => {
     console.log(newComment)
     axios.post(`http://localhost:3002/post/${postId}/comment`, { newComment }).then((res) => {
-      setComments("");
-      setNewComment(res.data)
+      setComments(res.data.comments);
+      setNewComment('')
     })
   }
 
